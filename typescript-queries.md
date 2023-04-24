@@ -424,6 +424,174 @@ client.graphql
   .catch(err => {
     console.error(err)
   });
-  
+
 // to do loop through results saving them as the description property linked with the uuid
+```
+
+Visualize Description
+
+```typescript
+client.graphql
+      .withClassName('Listing')
+      .withFields('description')
+      .withLimit(1)
+      .do()
+      .then(results => {
+        console.log(results)
+      })
+      .catch(err => {
+        console.error(err)
+      });      
+```
+
+Semantic Search through Descriptions!
+
+```typescript
+client.graphql
+      .withClassName('Listing')
+      .withFields('description')
+      .withNearText({
+         concepts: ['AirBnB near a place to walk my dog']
+      })
+      .withLimit(1)
+      .do()
+      .then(results => {
+        console.log(results)
+      })
+      .catch(err => {
+        console.error(err)
+      });      
+```
+
+Generate an Ad!
+
+```typescript
+const generatePrompt = `
+Please write an engaging advertisement for the following AirBnB listing.
+Description: {description}
+Please write the advertisement for this listing.`;
+
+client.graphql
+  .get()
+  .withClassName('Listing')
+  .withFields('description')
+  
+  // add withAdditional here
+  
+  .withGenerate({
+    singlePrompt: generatePrompt,
+  })
+  .withLimit(5)
+  .do()
+  .then(results => {
+    console.log(results)
+  })
+  .catch(err => {
+    console.error(err)
+  });
+
+//todo loop through results saving them as `Ad` objects with cref from Listing id
+```
+
+Visualize Listings with Ads
+
+```
+/*
+{
+  Get {
+    Listing (
+      where: {
+        path: ["hasAd"],
+        operator: GreaterThanEqual,
+        valueInt: 1
+      }
+    ) {
+      description
+      hasAd {
+        ... on Ad {
+          content
+        }
+      }
+    }
+  }
+}
+*/
+```
+
+Generic Ad Targeting
+
+```
+// add target property to `Ad` schema
+
+const target_property = {
+  'dataType': ['text'],
+  'name': 'target',
+  'description': 'High-level audience target for this ad.'
+}
+
+// client.schema.property.create("Ad", target_property)
+
+const targets = ["young couples", "elderly couples", "single travelers"]
+
+// like this
+for (const element of mylist) {
+  
+}
+
+const generatePrompt = `
+Please write an engaging advertisement for the following AirBnB listing.
+Description: {description}
+Please write the advertisement for this listing.`;
+
+client.graphql
+  .get()
+  .withClassName('Listing')
+  .withFields('description')
+  
+  // add withAdditional here
+  
+  .withGenerate({
+    singlePrompt: generatePrompt,
+  })
+  .withLimit(5)
+  .do()
+  .then(results => {
+    console.log(results)
+  })
+  .catch(err => {
+    console.error(err)
+  });
+
+//todo loop through results saving them as `Ad` objects with cref from Listing id
+
+```
+
+Get Ads targeted to `Single Travelers`
+
+```typescript
+// translate this
+
+where_filter = {
+  "path": ["target"],
+  "operator": "Equal",
+  "valueText": "single travelers"
+}
+
+ads = client.query\
+            .get("Ad", ["content", "target"])\
+            .with_where(where_filter)\
+            .with_limit(5)\
+            .do()["data"]["Get"]["Ad"]
+
+ads
+```
+
+Personalized Targeting
+
+```typescript
+// create user schema
+// add connor and bob
+// add hasAdTarget cref from Ad --> User
+// generate and save ads for each user
+
 ```
