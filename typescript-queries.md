@@ -28,22 +28,18 @@ import * as fs from 'fs';
 import * as Papa from 'papaparse';
 import * as _ from 'lodash';
 
-// Read CSV file
 const csvFile = 'AB_NYC_2019.csv';
 const csvData = fs.readFileSync(csvFile, 'utf8');
 
-// Define the type for rows
 type RowType = {
   [key: string]: number | string | null;
 };
 
-// Parse CSV data
 Papa.parse<RowType>(csvData, {
   header: true,
   dynamicTyping: true,
   skipEmptyLines: true,
   complete: function (results) {
-    // Replace 'Infinity', '-Infinity', and 'NaN' values with 'null'
     const sanitizedData: RowType[] = results.data.map((row) => {
       return _.mapValues(row, (value) => {
         if (value === Infinity || value === -Infinity || Number.isNaN(value)) {
@@ -53,7 +49,6 @@ Papa.parse<RowType>(csvData, {
       });
     });
 
-    // Convert data to a list of dictionaries
     const data_list = sanitizedData;
     console.log(data_list);
   },
