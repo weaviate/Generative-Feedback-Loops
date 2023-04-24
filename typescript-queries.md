@@ -60,10 +60,215 @@ Papa.parse<RowType>(csvData, {
 });
 ```
 
-Both of these are uglier than need be bc of the str() typecasting for `generate` might be worth fixing first.
+Create schema
 
-Create schema (moved to its own file bc very long)
+```typescript
+let listingObj = {
+  'class': 'Listing',
+  'description': '',
+  'vectorizeClassName': false,
+  'vectorizer': 'text2vec-openai',
+  'properties': [
+    {
+      'dataType': ['text'],
+      'name': 'description',
+      'description': 'The description of the apartment listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': false,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'name',
+      'description': 'A short description of the listing written by the lister.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'host_name',
+      'description': 'The name of the host of the apartment listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'neighbourhood',
+      'description': 'The neighbourhood group of the apartment listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'neighbourhood_group',
+      'description': 'The neighbourhood group of the apartment listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'latitude',
+      'description': 'The latitude of the listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'longitude',
+      'description': 'The longitude of the listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'room_type',
+      'description': 'The type of room of the listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'price',
+      'description': 'The price of the listing',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'minimum_nights',
+      'description': 'The minimum of nights to stay at the listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'number_of_reviews',
+      'description': 'The number of reviews for this listing.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'last_review',
+      'description': 'The last review date',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'reviews_per_month',
+      'description': 'The number of reviews per month.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'calculated_host_listings_count',
+      'description': 'The number of listings from this host.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+    {
+      'dataType': ['text'],
+      'name': 'availability_365',
+      'description': 'The availability of the listing out of the year.',
+      'vectorizePropertyName': false,
+      'moduleConfig': {
+        'text2vec-openai': {
+          'skip': true,
+          'vectorizePropertyName': false
+        }
+      }
+    },
+  ]
+}
+
+client.schema
+      .classCreator()
+      .withClass(listingObj)
+      .do()
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.error(err)
+      });
+```
+
 Upload data
+
+```typescript
+
+```
 
 Get Listings
 
