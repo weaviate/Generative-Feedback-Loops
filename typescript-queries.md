@@ -386,5 +386,44 @@ client.schema
 Generate a Description
 
 ```typescript
+const generatePrompt = `
+Please write a description for the following AirBnb Listing in english:
+Name: {name}
+Neighbourhood: {neighbourhood}
+Neighbhourhood Group: {neighbourhood_group}
+Latitude: {latitude}
+Longitude: {longitude}
+Room Type: {room_type}
+Price: {price}
+Minimum Nights: {minimum_nights}
+Number of Reviews: {number_of_reviews}
+Last Review: {last_review}
+Reviews per Month: {reviews_per_month}
+Calculated Host Listings Count: {calculated_host_listings_count}
+Availability_365: {availability_365}
 
+Please do not make up any information about the property in your description.`;
+
+const properties_str = 'name neighbourhood neighbourhood_group latitude longitude room_type price minimum_nights number_of_reviews last_review reviews_per_month calculated_host_listings_count availability_365';
+
+client.graphql
+  .get()
+  .withClassName('Listing')
+  .withFields(properties_str)
+  
+  // add withAdditional here
+  
+  .withGenerate({
+    singlePrompt: generatePrompt,
+  })
+  .withLimit(5)
+  .do()
+  .then(results => {
+    console.log(results)
+  })
+  .catch(err => {
+    console.error(err)
+  });
+  
+// to do loop through results saving them as the description property linked with the uuid
 ```
