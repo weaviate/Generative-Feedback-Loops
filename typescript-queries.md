@@ -267,7 +267,67 @@ client.schema
 Upload data
 
 ```typescript
+import { v4 as uuidv4 } from 'uuid';
 
+client.batch.objectsBatcher()
+  .configure({
+    batchSize: 16,
+    dynamic: true,
+    timeoutRetries: 3,
+    callback: null,
+  });
+
+const limit = 100;
+
+for (const data_obj of data_list.slice(0, limit)) {
+  const data_properties: Record<string, string | number | null> = {
+    name: data_obj['name'],
+    host_name: data_obj['host_name'],
+    neighbourhood: data_obj['neighbourhood'],
+    neighbourhood_group: data_obj['neighbourhood_group'],
+    latitude: String(data_obj['latitude']),
+    latitude_number: data_obj['latitude'],
+    longitude: String(data_obj['longitude']),
+    longitude_number: data_obj['longitude'],
+    room_type: data_obj['room_type'],
+    price: String(data_obj['price']),
+    price_number: data_obj['price'],
+    minimum_nights: String(data_obj['minimum_nights']),
+    minimum_nights_int: data_obj['minimum_nights'],
+    number_of_reviews: String(data_obj['number_of_reviews']),
+    number_of_reviews_int: data_obj['number_of_reviews'],
+    last_review: String(data_obj['last_review']),
+    last_review_date: data_obj['last_review'],
+    reviews_per_month: String(data_obj['reviews_per_month']),
+    reviews_per_month_number: data_obj['reviews_per_month'],
+    calculated_host_listings_count: String(data_obj['calculated_host_listings_count']),
+    calculated_host_listings_count_int: data_obj['calculated_host_listings_count'],
+    availability_365: String(data_obj['availability_365']),
+    availability_365_int: data_obj['availability_365'],
+    org_id: data_obj['id'],
+  };
+
+  const id = uuidv4();
+
+  client.batch
+    .objectsBatcher()
+    .withObject(
+      client.data
+        .creator()
+        .withClassName('Listing')
+        .withId(id)
+        .withProperties(data_properties)
+        .payload(),
+    )
+    .withConsistencyLevel(weaviate.replication.ConsistencyLevel.ALL)
+    .do()
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+}
 ```
 
 Get Listings
