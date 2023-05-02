@@ -3,21 +3,16 @@ Translation of the python client examples to TypeScript:
 Import Weaviate Client
 
 ```typescript
-import weaviate from 'weaviate-ts-client';
+import weaviate, { WeaviateClient } from 'weaviate-ts-client';
+import fs from 'fs';
 ```
 
 Instantiate Weaviate Embedded with API Key
 
 ```typescript
-const client = weaviate.client({
-  scheme: 'http',
-  host: 'localhost:6666',
-  headers: {
-    'X-OpenAI-Api-Key': '<THE-KEY>'
-  },
-  embedded: new weaviate.EmbeddedOptions({
-    port: 6666,
-  }),
+const client: WeaviateClient = weaviate.client({
+  scheme: 'https',
+  host: 'localhost:8080',
 });
 ```
 
