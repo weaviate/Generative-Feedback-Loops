@@ -19,7 +19,7 @@ yarn start
 
 Thanks so much to Fireship for the awesome overview of TypeScript!
 
-[![Alt text](https://img.youtube.com/vi/{video_id}/0.jpg)](https://www.youtube.com/watch?v=zQnBQ4tB3ZA)
+https://www.youtube.com/watch?v=zQnBQ4tB3ZA
 
 Information about the Weaviate TypeScript Client can be found here:
 
