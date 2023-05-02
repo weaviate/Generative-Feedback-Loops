@@ -18,7 +18,7 @@ Interested in joining in!
 Check out Weaviate on Slack: https://join.slack.com/t/weaviate/shared_invite/zt-1skr4sj7q-pJatorAg1r7DNomkx3CsrQ
 
 
-## Additional Resources for exploring Generative Feedback Loops with Weaviate!
+# Additional Resources for exploring Generative Feedback Loops!
 
 Papers
 - Augmented Language Models: A Survey. Mialon et al. 2023. Link: https://arxiv.org/abs/2302.07842.
