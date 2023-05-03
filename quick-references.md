@@ -25,7 +25,7 @@ Generate with all Listing properties
 ```graphql
 {
   Get {
-    Listing {
+    Listing (limit: 1) {
       name
       host_name
       neighbourhood
@@ -37,22 +37,7 @@ Generate with all Listing properties
       _additional {
         generate(
           singleResult: {
-            prompt: """Please write a description for the following AirBnb Listing in english:
-            	Name: {name}
-            	Neighbourhood: {neighbourhood}
-            	Neighbhourhood Group: {neighbourhood_group}
-            	Latitude: {latitude}
-            	Longitude: {longitude}
-							Room Type: {room_type}
-            	Price: {price}
-            	Minimum Nights: {minimum_nights}
-            	Number of Reviews: {number_of_reviews}
-            	Last Review: {last_review}
-            	Reviews per Month: {reviews_per_month}
-            	Calculated Host Listings Count: {calculated_host_listings_count}
-            	Availability_365: {availability_365}
-            
-            	Please do not make up any information about the property in your description."""
+            prompt: "Please write a description for the following AirBnB Listing in English. NAME: {name} HOST_NAME {host_name} NEIGHBOURHOOD {neighbourhood} NEIGHBOURHOOD_GROUP {neighbourhood_group} PRICE {price}. Please do not make up any information about the property in your description."
           }
         ) {
           singleResult
