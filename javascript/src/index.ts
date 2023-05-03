@@ -206,25 +206,18 @@ client.graphql
     //loop through results to add to `generated_descriptions`
     let generated_data = results["data"]["Get"]["Listing"];
     for (let i = 0; i < 5; i++) {
-      // convert to dictionary with
-      // key = uuid, value = description
-      console.log("GENERATED DATA");
-      console.log(generated_data);
-      console.log("\n");
-      //let uuid = generated_data[i]["_additional"]["id"]; 
+      let uuid = generated_data[i]["_additional"]["id"]; 
       let generated_result = generated_data[i]["_additional"]["generate"]["singleResult"];
       let new_description_property = {
         "description": generated_result
       };
       console.log(new_description_property);
-      /*
       client.data
         .getterById()
         .withClassName('Listing')
         .withId(uuid)
         .do()
         .then(res => {
-          // alter the schema
           client.data
             .updater()
             .withId(uuid)
@@ -238,7 +231,6 @@ client.graphql
         .catch(err => {
           console.error(err)
         });
-      */
     }
   })
   .catch(err => {
