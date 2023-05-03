@@ -10,9 +10,6 @@ const client: WeaviateClient = weaviate.client({
   }
 });
 
-
-console.log("HERE");
-
 let listingObj = {
   'class': 'Listing',
   'description': '',
@@ -135,10 +132,10 @@ client.schema
   .withClass(listingObj)
   .do()
   .then(res => {
-      console.log(res)
+      //console.log(res)
   })
   .catch(err => {
-      console.error(err)
+      //console.error(err)
   });
 
 const listings = fs.readFileSync('AB_NYC_2019.csv',{
@@ -153,9 +150,19 @@ let counter: number = 0;
 let success_counter: number = 0;
 
 for (let i: number = 0; i < 50; i++) {
+  for (let j: number = 0; j < 50; j++) {
+    if (listings[i][j]){
+      listings[i][j] = listings[i][j].replace(/\\/g, '').replace(/"/g, '');
+    }
+    else {
+      listings[i][j] = " ";
+    }
+  }
+  // need to remove \ from all strings
+
   const data_obj: any = listings[i];
   const obj: {[key: string]: string|number} = {};
-  console.log(data_obj);
+  //console.log(data_obj);
   obj["name"] = String(data_obj[1]);
   obj["host_name"] = String(data_obj[3]);
   obj["neighbourhood"] = String(data_obj[6]);
@@ -165,72 +172,75 @@ for (let i: number = 0; i < 50; i++) {
   obj["room_type"] = String(data_obj[9]);
   obj["price"] = String(data_obj[10]);
 
-  console.log(obj);
+  //console.log(obj);
 
   client.data.creator()
   .withClassName('Listing')
   .withProperties(obj)
   .do()
   .then(res => {
-    console.log(res);
+    //console.log(res);
     success_counter += 1;
   })
   .catch(err => {
-    console.error(err);
+    //console.error(err);
   });
-
 }
 
-/*
+//let uuid_to_generated_property: {[key: string]: string}; sorry beautiful typescript dictionary, not needed anymore.
 
-const generated_descriptions: string[] = [];
+const generate_prompt: string = 'Please write a description for the following AirBnB Listing in English. NAME: {name} HOST_NAME {host_name} NEIGHBOURHOOD {neighbourhood} NEIGHBOURHOOD_GROUP {neighbourhood_group} PRICE {price}. Please do not make up any information about the property in your description.';
 
-const generate_prompt: string = 'Please write a description for the following AirBnb Listing in english:\
-Name: {name}\
-Neighbourhood: {neighbourhood}\
-Neighbhourhood Group: {neighbourhood_group}\
-Latitude: {latitude}\
-Longitude: {longitude}\
-Room Type: {room_type}\
-Price: {price}\
-Minimum Nights: {minimum_nights}\
-Number of Reviews: {number_of_reviews}\
-Last Review: {last_review}\
-Reviews per Month: {reviews_per_month}\
-Calculated Host Listings Count: {calculated_host_listings_count}\
-Availability_365: {availability_365}\
-\
-Please do not make up any information about the property in your description.';
-
-
-const properties_str = 'name host_name neighbourhood neighbourhood_group latitude longitude room_type price’';
+const properties_str = 'name host_name neighbourhood neighbourhood_group price _additional{ id }';
 
 client.graphql
   .get()
   .withClassName('Listing')
-  .withFields(properties_str)
-  
-  // add withAdditional here
-  
+  .withFields(properties_str)  
   .withGenerate({
     singlePrompt: generate_prompt,
   })
   .withLimit(5)
   .do()
   .then(results => {
-    console.log(results);
-    /*
-    loop through results to add to `generated_descriptions`
-    for (let result in results) {
-
+    //loop through results to add to `generated_descriptions`
+    let generated_data = results["data"]["Get"]["Listing"];
+    for (let i = 0; i < 5; i++) {
+      // convert to dictionary with
+      // key = uuid, value = description
+      console.log("GENERATED DATA");
+      console.log(generated_data);
+      console.log("\n");
+      //let uuid = generated_data[i]["_additional"]["id"]; 
+      let generated_result = generated_data[i]["_additional"]["generate"]["singleResult"];
+      let new_description_property = {
+        "description": generated_result
+      };
+      console.log(new_description_property);
+      /*
+      client.data
+        .getterById()
+        .withClassName('Listing')
+        .withId(uuid)
+        .do()
+        .then(res => {
+          // alter the schema
+          client.data
+            .updater()
+            .withId(uuid)
+            .withClassName('Listing')
+            .withProperties(new_description_property)
+            .do();
+        })
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.error(err)
+        });
+      */
     }
-    */
-/*
   })
   .catch(err => {
     console.error(err);
   });
-
-*/
-
-/* Add cross-reference */
