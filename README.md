@@ -1,27 +1,25 @@
-# Generative-Feedback-Loops
-This Repository contains a collection of code snippets for running Generative Feedback Loops with Weaviate:
+# Generative Feedback Loops with LLMs
+
+This Repository contains a collection of code snippets for running Generative Feedback Loops with Weaviate.
 
 # Additional Content
-Podcast:
-Blog Post:
+
+* 📄 Blog Post with implementation details: https://***
+* 🎙️ Podcast: https://***
 
 Users can easily ablate:
+
 1. Python or TypeScript
 2. OpenAI or Cohere
 
-Please see the
+Please see the folders
 
 ```
 python/
 javascript/
 ```
 
-To begin!
-
-Interested in joining in!
-Check out Weaviate on Slack: 
-https://join.slack.com/t/weaviate/shared_invite/zt-1skr4sj7q-pJatorAg1r7DNomkx3CsrQ
-
+Interested in joining the Weaviate community? [Join our Slack!](https://weaviate.io/slack)
 
 # Additional Resources for exploring Generative Feedback Loops!
 
