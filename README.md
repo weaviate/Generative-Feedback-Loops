@@ -5,7 +5,7 @@ This Repository contains a collection of code snippets for running Generative Fe
 # Additional Content
 
 * 📄 Blog Post with implementation details: https://***
-* 🎙️ Podcast: https://***
+* 🎙️ Podcast: https://youtu.be/1RALju6ZJz0
 
 Users can easily ablate:
 
