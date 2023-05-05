@@ -4,7 +4,7 @@ This Repository contains a collection of code snippets for running Generative Fe
 
 # Additional Content
 
-* 📄 Blog Post with implementation details: https://***
+* 📄 Blog Post with implementation details: https://weaviate.io/blog/generative-feedback-loops-with-LLMs
 * 🎙️ Podcast: https://youtu.be/1RALju6ZJz0
 
 Users can easily ablate:
