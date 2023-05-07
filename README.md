@@ -28,3 +28,7 @@ Papers
 - Toolformer: Language Models Can Teach Themselves To Use Tools. Shick et al. 2023. Link: https://arxiv.org/abs/2302.04761.
 - Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. Wei et al. 2022. Link: https://arxiv.org/abs/2201.11903.
 - Synergizing Acting and Reasoning in Language Models. Yao et al. 2022. Link: https://arxiv.org/abs/2210.03629.
+- Emergent autonomous scientific research capabilities of large language models. Boiko et al. 2023. Link: https://arxiv.org/pdf/2304.05332.pdf.
+- Generative Agents: Interactive Simulacra of Human Behavior. Park et al. 2023. Link: https://arxiv.org/pdf/2304.03442.pdf.
+- OpenAGI: When LLM Meets Domain Experts. Ge et al. 2023. Link: https://arxiv.org/pdf/2304.04370.pdf.
+- HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face. Shen et al. 2023. Link: https://arxiv.org/pdf/2303.17580.pdf.
