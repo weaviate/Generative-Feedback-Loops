@@ -32,3 +32,6 @@ Papers
 - Generative Agents: Interactive Simulacra of Human Behavior. Park et al. 2023. Link: https://arxiv.org/pdf/2304.03442.pdf.
 - OpenAGI: When LLM Meets Domain Experts. Ge et al. 2023. Link: https://arxiv.org/pdf/2304.04370.pdf.
 - HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face. Shen et al. 2023. Link: https://arxiv.org/pdf/2303.17580.pdf.
+
+Summary Index
+- Retrieving Texts based on Abstract Descriptions. Ravfogel et al. 2023. Link: https://arxiv.org/pdf/2305.12517.pdf
