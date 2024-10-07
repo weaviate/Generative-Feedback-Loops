@@ -10,3 +10,6 @@ Structured Outputs in LLMs
 
 LLM Inference Serving
 1. Efficient Memory Management for Large Language Model Serving with PagedAttention. Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E. Gonzalez, Hao Zhang, Ion Stoica. [Arxiv Link](https://arxiv.org/abs/2309.06180)
+
+Data Enrichment with LLMs
+1. Building DoorDash's product knowledge graph with large language models. Steven Xu, Sree Chaitanya Vadrevu. [Blog Post](https://careers.doordash.com/blog/building-doordashs-product-knowledge-graph-with-large-language-models/)
