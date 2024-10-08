@@ -13,3 +13,8 @@ LLM Inference Serving
 
 Data Enrichment with LLMs
 1. Building DoorDash's product knowledge graph with large language models. Steven Xu, Sree Chaitanya Vadrevu. [Blog Post](https://careers.doordash.com/blog/building-doordashs-product-knowledge-graph-with-large-language-models/)
+
+Large-Scale Offline Classification
+1. Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise. Rose E. Wang, Ana T. Ribeiro, Carly D. Robinson, Susanna Loeb, and Dora Demsky. 2024. [Arxiv Link](https://arxiv.org/pdf/2410.03017).
+
+Classifies 550,000 tutor messages in strategy categories such as "Prompt Student to Explain", "Ask Question to Guide Thinking", ...
