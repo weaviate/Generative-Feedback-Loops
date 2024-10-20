@@ -17,6 +17,9 @@ Data Enrichment with LLMs
 Synthetic Training Data Generation
 1. DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback. Zaid Khan, Elias Stengel-Eskin, Jaemin Cho, and Mohit Bansal. [Arxiv Link](https://arxiv.org/abs/2410.06215)
 
+Agents
+1. Agentic Information Retrieval. Weinan Zhang, Junwei Liao, Ning Li, Kounianhua Du. [Arxiv Link](https://arxiv.org/pdf/2410.09713)
+
 Examples of Large-Scale Offline Classification
 1. Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise. Rose E. Wang, Ana T. Ribeiro, Carly D. Robinson, Susanna Loeb, and Dora Demsky. 2024. [Arxiv Link](https://arxiv.org/pdf/2410.03017).
 
