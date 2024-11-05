@@ -3,6 +3,7 @@
 ## Similar Frameworks and Systems
 1. UniDM: A Unified Framework for Data Manipulation with Large Language Models. Yichen Qian, Yongyi He, Rong Zhu, Jintao Huang, Zhijan Ma, Haibin Wang, Yaohua Wang, Xiuyu Sun, Defu Lian, Bolin Ding, Jingren Zhou. [Arxiv Link](https://arxiv.org/abs/2405.06510)
 2. Reimagining LLM-Powered Unstructured Data Analysis with DocETL. Shreya Shankar, Aditya Parameswaran, Eugene Wu. [Blog Post](https://data-people-group.github.io/blogs/2024/09/24/docetl/) (Paper coming soon).
+3. DataChain. [GitHub Repo](https://github.com/iterative/datachain)
 
 ## Data Synthesis
 1. A Survey on Data Synthesis and Augmentation for Large Language Models. Wang et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2410.12896)
