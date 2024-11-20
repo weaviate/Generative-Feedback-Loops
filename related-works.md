@@ -23,8 +23,10 @@
 1. DataEnvGym: Data Generation Agents in Teacher Environments with Student Feedback. Zaid Khan, Elias Stengel-Eskin, Jaemin Cho, and Mohit Bansal. [Arxiv Link](https://arxiv.org/abs/2410.06215)
 
 ## Agents
-1. Agentic Information Retrieval. Weinan Zhang, Junwei Liao, Ning Li, Kounianhua Du. [Arxiv Link](https://arxiv.org/pdf/2410.09713)
-2. Speculations on Test-Time Scaling. Sasha Rush, Daniel Ritter. [YouTube Link](https://www.youtube.com/watch?v=6PEJ96k1kiw)
+1. Gorilla: Large Language Model Connected with Massive APIs. Shishir G. Patil, Tianjun Zhang, Xin Wang, Joseph E. Gonzalez. 2023. [Arxiv Link](https://arxiv.org/abs/2305.15334)
+2. Agentic Information Retrieval. Weinan Zhang, Junwei Liao, Ning Li, Kounianhua Du. [Arxiv Link](https://arxiv.org/pdf/2410.09713)
+3. Speculations on Test-Time Scaling. Sasha Rush, Daniel Ritter. [YouTube Link](https://www.youtube.com/watch?v=6PEJ96k1kiw)
+4. AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Beibin Li, Erkang Zhu, Li Jiang, Xiaoyun Zhang, Shaokun Zhang, Jiale Liu, Ahmed Hassan Awadallah, Ryen W. White, Doug Burger, Chi Wang. 2023. [Arxiv Link](https://arxiv.org/abs/2308.08155)
 
 ## Examples of Large-Scale Offline Classification
 1. Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise. Rose E. Wang, Ana T. Ribeiro, Carly D. Robinson, Susanna Loeb, and Dora Demsky. 2024. [Arxiv Link](https://arxiv.org/pdf/2410.03017).
