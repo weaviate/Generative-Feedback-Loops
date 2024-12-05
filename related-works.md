@@ -6,8 +6,9 @@
 3. DataChain. [GitHub Repo](https://github.com/iterative/datachain)
 
 ## Data Synthesis
-1. A Survey on Data Synthesis and Augmentation for Large Language Models. Wang et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2410.12896)
-2. A Survey of Data Synthesis Approaches. Chang et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2407.03672)
+1. Surveying the effects of quality, diversity, and complexity in synthetic data from large language models. Alex Havrilla, Andrew Dai, Laura O'Mahony, Koen Oostermeijer, Vera Zisler, Alon Albalak, Fabrizio Milo, Sharath Chandra Raparthy, Kanishk Gandhi, Baber Abbasi, Duy Phung, Maia Iyer, Dakota Mahan, Chase Biagden, Srishti Gureja, Mohammed Hamdy, Wen-Ding Li, Giovanni Paolini, Pawan Sasanka Ammanamanchi, Eliot Meyerson. 2024. [Arxiv Link](https://arxiv.org/pdf/2412.02980)
+2. A Survey on Data Synthesis and Augmentation for Large Language Models. Wang et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2410.12896)
+3. A Survey of Data Synthesis Approaches. Chang et al. 2024. [Arxiv Link](https://arxiv.org/pdf/2407.03672)
 
 ## Structured Outputs in LLMs
 1. Efficient Guided Generation for Large Language Models. Brandon T. Willard, Remi Louf. [Arxiv Link](https://arxiv.org/abs/2307.09702)
