@@ -4,6 +4,8 @@
 1. UniDM: A Unified Framework for Data Manipulation with Large Language Models. Yichen Qian, Yongyi He, Rong Zhu, Jintao Huang, Zhijan Ma, Haibin Wang, Yaohua Wang, Xiuyu Sun, Defu Lian, Bolin Ding, Jingren Zhou. [Arxiv Link](https://arxiv.org/abs/2405.06510)
 2. Reimagining LLM-Powered Unstructured Data Analysis with DocETL. Shreya Shankar, Aditya Parameswaran, Eugene Wu. [Blog Post](https://data-people-group.github.io/blogs/2024/09/24/docetl/) (Paper coming soon).
 3. DataChain. [GitHub Repo](https://github.com/iterative/datachain)
+4. Curator. [GitHub Repo](https://github.com/bespokelabsai/curator)
+5. HuggingFace Synthetic Data Generator. [Blog Post](https://huggingface.co/blog/synthetic-data-generator)
 
 ## Data Synthesis
 1. Surveying the effects of quality, diversity, and complexity in synthetic data from large language models. Alex Havrilla, Andrew Dai, Laura O'Mahony, Koen Oostermeijer, Vera Zisler, Alon Albalak, Fabrizio Milo, Sharath Chandra Raparthy, Kanishk Gandhi, Baber Abbasi, Duy Phung, Maia Iyer, Dakota Mahan, Chase Biagden, Srishti Gureja, Mohammed Hamdy, Wen-Ding Li, Giovanni Paolini, Pawan Sasanka Ammanamanchi, Eliot Meyerson. 2024. [Arxiv Link](https://arxiv.org/pdf/2412.02980)
