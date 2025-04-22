@@ -6,7 +6,7 @@ const client: WeaviateClient = weaviate.client({
   scheme: 'http',
   host: 'localhost:8080',
   headers: {
-    'X-Cohere-Api-Key': 'cJuzSJQDgzm5vJXoxo77c8DTNPT9CmPdFiYq4EoY'
+    'X-Cohere-Api-Key': ''
   }
 });
 
